@@ -97,7 +97,10 @@
 
       <div class="list-header">
         <h3>碎片板</h3>
-        <button id="clearFragmentsBtn" class="danger-btn" type="button">清空碎片</button>
+        <div class="button-row compact-row">
+          <button id="exportFragmentsBtn" class="secondary-btn" type="button">导出碎片</button>
+          <button id="clearFragmentsBtn" class="danger-btn" type="button">清空碎片</button>
+        </div>
       </div>
 
       <div id="fragmentList" class="record-list"></div>
@@ -107,11 +110,16 @@
     <section id="tab-cards" class="tab-panel">
       <div class="panel-title">
         <h2>字卡库</h2>
-        <p>代码里不预设固定字卡。你在这里自己输入、导入、导出。</p>
+        <p>代码里不预设固定字卡。你在这里自己输入、分类、导入、导出。</p>
       </div>
 
       <div class="card-block">
         <label>
+          字卡分类
+          <input id="cardCategoryInput" type="text" placeholder="例如：日常 / 安抚 / 挑衅 / 行动。留空则归入「未分类」。" />
+        </label>
+
+        <label style="margin-top:12px;">
           添加字卡
           <textarea id="cardInput" placeholder="每行一张字卡。例如：&#10;我看见了。&#10;别删。&#10;过来。" rows="6"></textarea>
         </label>
@@ -145,7 +153,7 @@
       <div id="cardList" class="card-list"></div>
     </section>
 
-    <!-- 陪伴：第一版先放界面骨架，JS 下一阶段实现 -->
+    <!-- 陪伴 -->
     <section id="tab-companion" class="tab-panel">
       <div class="panel-title">
         <h2>陪伴</h2>
@@ -163,13 +171,16 @@
         <div id="companionView" class="companion-view">
           <div id="companionStatus">还没有开始陪伴。</div>
           <div id="companionTimer" class="companion-timer">00:00:00</div>
+          <div class="companion-total">
+            累计已陪伴：<span id="companionTotalTime">00:00:00</span>
+          </div>
         </div>
 
         <button id="endCompanionBtn" class="danger-btn" type="button">结束陪伴</button>
       </div>
     </section>
 
-    <!-- 来信：第一版先放界面骨架，JS 下一阶段实现 -->
+    <!-- 来信 -->
     <section id="tab-letters" class="tab-panel">
       <div class="panel-title">
         <h2>MJ 来信</h2>
